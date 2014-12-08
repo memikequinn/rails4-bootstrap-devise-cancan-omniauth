@@ -23,4 +23,8 @@ module User::Roles
   def role?(base_role)
     AppConfig.roles.index(base_role.to_s) <= AppConfig.roles.index(role)
   end
+
+  def admin?
+    has_role? :admin
+  end
 end
